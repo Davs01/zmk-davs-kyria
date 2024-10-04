@@ -99,8 +99,8 @@
 
 			bindings = <
 	&kp ESC		&kp EXCL		&kp AT		&kp HASH		&kp DOLLAR		&kp PRCNT                                 							 &kp CARET		&kp AMPS    &kp STAR		&kp LPAR		&kp RPAR		&kp BSPC
-	&trans		&trans			&trans		&kp F 			&trans 			&kp P                      										 &kp KP_MINUS 		&kp RBRC  	&kp SQT     	&kp BSLH   		&kp MINUS 		&kp PIPE
-	&trans    	&trans 			&trans 		&trans 			&trans 			&kp P 		&trans 		&trans   			&trans		&trans		 &kp SLASH 	    &kp KP_PLUS &kp LESS_THAN 		&kp GREATER_THAN 		&kp NUBS 		&kp TILDE
+	&trans		&trans			&trans		&kp F 			&trans 			&kp P                      										     &kp NUBS		&kp RBRC  	&kp SQT     	&kp BSLH   		&kp MINUS 		&kp PIPE
+	&trans    	&trans 			&trans 		&trans 			&trans 			&kp P 		&trans 		&trans   			&trans		&trans		 &kp SLASH 	    &kp KP_PLUS &kp DQT 	&kp GREATER_THAN 		&kp NUBS 		&kp TILDE
 	                          				&trans 			&trans 			&trans 		&trans 		&trans   			&trans 		&trans		 &trans		 	&trans		&trans
 			>;
 
