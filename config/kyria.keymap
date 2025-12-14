@@ -17,7 +17,6 @@
 #define NUMPAD 2
 #define SYMBOLS 3
 #define GAME 4
-//#define MOUSE 4
 #define MEDIA 5
 #define RGB 6
 #define BLUETOOTH 7
@@ -64,6 +63,12 @@
 		compatible = "zmk,keymap";
 
 		default_layer {
+			display-name = "Default Layer";
+// ---------------------------------------------------------------------------------------------------------------------------------
+// |  ESC  |  Q  |  W  |  E   |RGB/R |  T   |                                          |  Y   |  U    |  I    |  O   |   P   | BSPC |
+// |TAB/CTL|  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   [  |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B   | L CTRL  |  SPACE  |  |   RET   |  GAME   |  N   |  M    |  ,    |  .   |   _   | DEL  |
+//                     | MUTE | ALT  | GUI  |  SWAP   |  SPACE  |  |   RET   | SYMBOLS | GUI  | NUMPAD| PLAY  |
 			bindings = <
 	&kp ESC			&kp Q		&kp W		&kp E		&lt RGB R		&kp T                                         									&kp Y 				&kp U		&kp I		&kp O		&kp P		&kp BSPC
 	&mto LCTRL TAB	&kp A       &kp S       &kp D       &kp F 			&kp G                                               							&kp H 				&kp J		&kp K		&kp L		&kp SEMI 	&kp LBKT 
@@ -74,8 +79,12 @@
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
 		};
                         
-		swap_layer {
-			bindings = <
+		swap_layer {			display-name = "Swap Layer";
+// ---------------------------------------------------------------------------------------------------------------------------------
+// | BSPC  |  1  |  2  |  3   |  4   |  5   |                                          |  6   |  7    |  8    |  9   |   0   | ESC  |
+// |  TAB  |     |     |      |      |      |                                          |      |  UP   |       |      |       |TAB/CTL|
+// | SHIFT |     |     |      |      |      |         |         |  | CAPS_W  |         | LEFT | DOWN  | RIGHT |      |       | SHIFT|
+//                     | MUTE | ALT  |SYMBOL| SPACE   | TRANS   |  | TRANS   |  RET    |NUMPAD| PREV  | MUTE  |			bindings = <
 	&kp BSPC		&kp N1		&kp N2		&kp N3		&kp N4		&kp N5                                        										&kp N6			&kp N7			&kp N8		&kp N9		&kp N0		&kp ESC
 	&kp TAB 	    &none  	    &none 		&none 		&none 		&none                                            									&none 			&kp UP  		&none     	&none   	&none 		&mto LCTRL TAB
 	&kp RSHFT 		&none 	    &none		&none       &none 		&none		    &none		    &none				&caps_word		&none			&kp LEFT 	    &kp DOWN  		&kp RIGHT 	&none 	    &none 	    &kp LSHFT
@@ -86,7 +95,12 @@
 		};
 
 		numpad_layer {
-
+			display-name = "Numpad Layer";
+// ---------------------------------------------------------------------------------------------------------------------------------
+// |  F1   | F2  | F3  | F4   | F5   | F6   |                                          |  7   |  8    |  9    |  *   |  F7   |  F8  |
+// | INSERT|PG_DN|LEFT | DOWN |RIGHT |  [   |                                          |  4   |  5    |  6    |  -   |  F9   | F10  |
+// | TRANS |TRANS|TRANS|TRANS |TRANS |  (   | TRANS   | TRANS   |  | TRANS   | TRANS  |  1   |  2    |  3    |  +   |  F11  | F12  |
+//                     | TRANS|TRANS |TRANS | TRANS   | TRANS   |  | TRANS   | TRANS  |  0   | TRANS | TRANS |
 			bindings = <
 	&kp F1		&kp F2			&kp F3			&kp F4		&kp F5		&kp F6                                  							&kp N7			&kp N8		&kp N9 		&kp KP_MULTIPLY		&kp F7 		&kp F8
 	&kp INSERT	&kp PG_DN		&kp LEFT 		&kp DOWN 	&kp RIGHT 	&kp LBKT                                  							&kp N4 			&kp N5  	&kp N6 		&kp KP_MINUS		&kp F9 		&kp F10
@@ -96,7 +110,12 @@
 		};
 
 		symbol_layer {
-
+			display-name = "Symbols Layer";
+// ---------------------------------------------------------------------------------------------------------------------------------
+// | ESC   |  !  |  @  |  #   |  $   |  %   |                                          |  ^   |  &    |  *    |  (   |   )   | BSPC |
+// | TRANS |TRANS|TRANS|  F   |TRANS |  P   |                                          | NUBS |  ]    |  '    |  \   |   -   |  |   |
+// | TRANS |TRANS|TRANS|TRANS |TRANS |  P   | TRANS   | TRANS   |  | TRANS   | TRANS  |  /   |  +    |  "    |  >   | NUBS  |  ~   |
+//                     |TRANS |TRANS |TRANS | TRANS   | TRANS   |  | TRANS   | TRANS  |TRANS | TRANS | TRANS |
 			bindings = <
 	&kp ESC		&kp EXCL		&kp AT		&kp HASH		&kp DOLLAR		&kp PRCNT                                 							 &kp CARET		&kp AMPS    &kp STAR		&kp LPAR		&kp RPAR		&kp BSPC
 	&trans		&trans			&trans		&kp F 			&trans 			&kp P                      										     &kp NUBS		&kp RBRC  	&kp SQT     	&kp BSLH   		&kp MINUS 		&kp PIPE
@@ -107,7 +126,12 @@
 		};
 
 		game_layer {
-
+			display-name = "Game Layer";
+// ---------------------------------------------------------------------------------------------------------------------------------
+// | ESC   |  1  |  2  |  3   |  4   |  5   |                                          |  6   |  7    |  8    |  9   |   0   | ESC  |
+// | SHIFT |  A  |  W  |  E   |  R   |  F   |                                          |      |  UP   |       |      |       | TAB  |
+// | CTRL  |  Z  |  S  |  D   |  C   |  V   |         |         |  | CAPS_W  | DEFAULT| LEFT | DOWN  | RIGHT |      |       | ALT  |
+//                     | MUTE | ALT  |SYMBOL| SPACE   | SPACE   |  | TRANS   |  RET   |NUMPAD| PREV  | MUTE  |
 			bindings = <
 	&kp ESC			&kp N1		&kp N2		&kp N3		&kp N4		&kp N5                                        										&kp N6			&kp N7			&kp N8		&kp N9		&kp N0		&kp ESC
 	&kp LSHFT 	    &kp A  		&kp W		&kp E		&kp R 		&kp F                                            									&none 			&kp UP  		&none     	&none   	&none 		&kp TAB
@@ -118,7 +142,12 @@
 		};
 
 		media_layer {
-
+			display-name = "Media Layer";
+// ---------------------------------------------------------------------------------------------------------------------------------
+// | TRANS |TRANS|TRANS|TRANS |TRANS |TRANS |                                          |TRANS |TRANS  |TRANS  |TRANS |TRANS  |TRANS |
+// | TRANS |TRANS|TRANS|TRANS |TRANS |TRANS |                                          | PREV | VOL-  | VOL+  | NEXT |TRANS  |TRANS |
+// | TRANS |TRANS|TRANS|TRANS |TRANS |TRANS | TRANS   | TRANS   |  | TRANS   | TRANS  |TRANS |TRANS  |TRANS  |TRANS |TRANS  |TRANS |
+//                     |TRANS |TRANS |TRANS | TRANS   | TRANS   |  | TRANS   | PLAY   | MUTE | TRANS | TRANS |
 			bindings = <
 	&trans &trans &trans &trans &trans &trans                                &trans &trans &trans &trans &trans &trans
 	&trans &trans &trans &trans &trans &trans                                &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &trans &trans
@@ -129,6 +158,12 @@
 		};
 
 		rgb_layer {
+			display-name = "RGB Layer";
+// ---------------------------------------------------------------------------------------------------------------------------------
+// | TRANS |TRANS|TRANS|TRANS |TRANS |TRANS |                                          |RGB_ON|RGB_OFF|TRANS  |TRANS |TRANS  |TRANS |
+// | TRANS |TRANS|TRANS|TRANS |TRANS |TRANS |                                          |RGB_TOG|RGB_HUI|RGB_SAI|RGB_BRI|RGB_SPI|RGB_EFF|
+// | TRANS |TRANS|TRANS|TRANS |TRANS |TRANS | TRANS   | TRANS   |  | TRANS   | TRANS  |TRANS |RGB_HUD|RGB_SAD|RGB_BRD|RGB_SPD|RGB_EFR|
+//                     |TRANS |TRANS |TRANS | TRANS   | TRANS   |  | TRANS   | TRANS  |TRANS | TRANS | TRANS |
 			bindings = <
 	&trans &trans &trans &trans &trans &trans                                &rgb_ug RGB_ON &rgb_ug RGB_OFF &trans &trans &trans &trans
 	&trans &trans &trans &trans &trans &trans                                &rgb_ug RGB_TOG &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI &rgb_ug RGB_EFF
@@ -139,7 +174,12 @@
 		};
 
 		bluetooth_layer {
-
+			display-name = "Bluetooth Layer";
+// ---------------------------------------------------------------------------------------------------------------------------------
+// |BT_NXT |BT_0 |BT_1 |BT_2  |BT_3  |BT_4  |                                          |TRANS |TRANS  |TRANS  |TRANS |TRANS  |TRANS |
+// |BT_PRV |TRANS|TRANS|TRANS |TRANS |TRANS |                                          |TRANS |TRANS  |TRANS  |TRANS |TRANS  |TRANS |
+// | TRANS |TRANS|TRANS|OUT_BLE|OUT_USB|OUT_TOG| TRANS | TRANS   |  | TRANS   | TRANS  |TRANS |TRANS  |TRANS  |TRANS |TRANS  |TRANS |
+//                     |BT_CLR|TRANS |TRANS | TRANS   | TRANS   |  | TRANS   | TRANS  |TRANS | TRANS | TRANS |
 			bindings = <
 	&bt BT_NXT &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                    &trans &trans &trans &trans &trans &trans
 	&bt BT_PRV &trans &trans &trans &trans &trans                                                  &trans &trans &trans &trans &trans &trans
