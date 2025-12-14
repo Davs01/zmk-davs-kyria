@@ -16,7 +16,7 @@
 #define SWAP 1
 #define NUMPAD 2
 #define SYMBOLS 3
-#define GAME 4
+#define WINDOWS 4
 #define RGB 5
 #define BLUETOOTH 6
 
@@ -58,12 +58,12 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  ESC  |  Q  |  W  |  E   |RGB/R |  T   |                                          |  Y   |  U    |  I    |  O   |   P   | BSPC |
 // |TAB/CTL|  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   [  |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   | L CTRL  |  SPACE  |  |   RET   |  GAME   |  N   |  M    |  ,    |  .   |   _   | DEL  |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B   | L CTRL  |  SPACE  |  |   RET   | WINDOWS |  N   |  M    |  ,    |  .   |   _   | DEL  |
 //                     | MUTE | ALT  | GUI  |  SWAP   |  SPACE  |  |   RET   | SYMBOLS | GUI  | NUMPAD| PLAY  |
 			bindings = <
-	&kp ESC			&kp Q		&kp W		&kp E		&ltq RGB R		&kp T                                         									&kp Y 				&kp U		&kp I		&kp O		&kp P		&kp BSPC
-	&mt LCTRL TAB	&kp A       &kp S       &kp D       &kp F 			&kp G                                               							&kp H 				&kp J		&kp K		&kp L		&kp SEMI 	&kp LBKT 
-	&kp LSHFT 		&kp Z 		&kp X       &kp C       &kp V       	&kp B 			&kp LCTRL	&kp SPACE   		&kp RET 		&to GAME		&kp N 				&kp M		&kp COMMA 	&kp DOT 	&kp UNDER 	&kp DEL
+	&kp ESC			&kp Q		&kp W		&kp E		&ltq RGB R		&kp T                                         												&kp Y 				&kp U		&kp I		&kp O		&kp P		&kp BSPC
+	&mt LCTRL TAB	&kp A       &kp S       &kp D       &kp F 			&kp G                                               								&kp H 				&kp J		&kp K		&kp L		&kp SEMI 	&kp LBKT 
+	&kp LSHFT 		&kp Z 		&kp X       &kp C       &kp V       	&kp B 			&kp LCTRL	&kp SPACE   		&kp RET 		&to WINDOWS		&kp N 				&kp M		&kp COMMA 	&kp DOT 	&kp UNDER 	&kp DEL
 	                						&kp C_MUTE  &kp LALT    	&kp LGUI  	&mo SWAP 	&kp SPACE     		&kp RET			&mo SYMBOLS 	&kp LGUI 			&mo NUMPAD 	&kp C_PP 
 			>;
 
@@ -118,18 +118,18 @@
 
 		};
 
-		game_layer {
-			display-name = "Game Layer";
+windows_layer {
+		display-name = "Windows Layer";
 // ---------------------------------------------------------------------------------------------------------------------------------
-// | ESC   |  1  |  2  |  3   |  4   |  5   |                                          |  6   |  7    |  8    |  9   |   0   | ESC  |
-// | SHIFT |  A  |  W  |  E   |  R   |  F   |                                          |      |  UP   |       |      |       | TAB  |
-// | CTRL  |  Z  |  S  |  D   |  C   |  V   |         |         |  | CAPS_W  | DEFAULT| LEFT | DOWN  | RIGHT |      |       | ALT  |
-//                     | MUTE | ALT  |SYMBOL| SPACE   | SPACE   |  | TRANS   |  RET   |NUMPAD| PREV  | MUTE  |
-			bindings = <
-	&kp ESC			&kp N1		&kp N2		&kp N3		&kp N4		&kp N5                                        										&kp N6			&kp N7			&kp N8		&kp N9		&kp N0		&kp ESC
-	&kp LSHFT 	    &kp A  		&kp W		&kp E		&kp R 		&kp F                                            									&none 			&kp UP  		&none     	&none   	&none 		&kp TAB
-	&kp LCTRL 		&kp Z  	    &kp S		&kp D       &kp C 		&kp V		    &none		    &none				&caps_word		&to DEFAULT		&kp LEFT 	    &kp DOWN  		&kp RIGHT 	&none 	    &none 	    &kp LALT
-	                     					&mo C_MUTE 	&kp LALT 	&mo SYMBOLS 	&kp SPACE 		&kp SPACE         	&trans 			&kp RET			&mo NUMPAD		&kp C_PREV 		&kp C_MUTE
+// |  ESC  |  Q  |  W  |  E   |RGB/R |  T   |                                          |  Y   |  U    |  I    |  O   |   P   | BSPC |
+// |TAB/CTL|  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   [  |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B   | L GUI   |  SPACE  |  |   RET   | DEFAULT |  N   |  M    |  ,    |  .   |   _   | DEL  |
+//                     | MUTE | GUI  | CTRL |  SWAP   |  SPACE  |  |   RET   | SYMBOLS | CTRL | NUMPAD| PLAY  |
+		bindings = <
+	&kp ESC			&kp Q		&kp W		&kp E		&ltq RGB R		&kp T                                         												&kp Y 				&kp U		&kp I		&kp O		&kp P		&kp BSPC
+	&mt LCTRL TAB	&kp A       &kp S       &kp D       &kp F 			&kp G                                               								&kp H 				&kp J		&kp K		&kp L		&kp SEMI 	&kp LBKT 
+	&kp LSHFT 		&kp Z 		&kp X       &kp C       &kp V       	&kp B 			&kp LGUI	&kp SPACE   		&kp RET 		&to DEFAULT		&kp N 				&kp M		&kp COMMA 	&kp DOT 	&kp UNDER 	&kp DEL
+	                						&kp C_MUTE  &kp LGUI    	&kp LCTRL  	&mo SWAP 	&kp SPACE     		&kp RET			&mo SYMBOLS 	&kp LCTRL 			&mo NUMPAD 	&kp C_PP 
 			>;
 
 		};
